@@ -24,18 +24,6 @@ struct {
 	} *data;
 } points;
 
-struct {
-	int len;
-	int cap;
-	struct {
-		int i;
-		float r;
-		float g;
-		float b;
-		float a;
-	} *data;
-} changes;
-
 void draw_circle(float cx, float cy, float radius) {
     glBegin(GL_TRIANGLE_FAN);
     glVertex2f(cx, cy); 
