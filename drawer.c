@@ -37,16 +37,16 @@ struct {
 } changes;
 
 void draw_circle(float cx, float cy, float radius) {
-    glBegin(GL_TRIANGLE_FAN);
-    glVertex2f(cx, cy); 
+	glBegin(GL_TRIANGLE_FAN);
+	glVertex2f(cx, cy);
 
-    for (float i = 0; i <= 2.0; i += 0.125) {
-        float theta = M_PI * i;
-        float x = radius / width * cosf(theta);
-        float y = radius / height * sinf(theta);
-        glVertex2f(x + cx, y + cy);
-    }
-    glEnd();
+	for (float i = 0; i <= 2.0; i += 0.125) {
+		float theta = M_PI * i;
+		float x = radius / width * cosf(theta);
+		float y = radius / height * sinf(theta);
+		glVertex2f(x + cx, y + cy);
+	}
+	glEnd();
 }
 
 void key_callback(GLFWwindow *window, int key, int scancode, int action, int mods) {
@@ -135,7 +135,7 @@ int main() {
 	glDisable(GL_CULL_FACE);
 	while (!glfwWindowShouldClose(window)) {
 		glfwGetFramebufferSize(window, &width, &height);
-        glViewport(0, 0, width, height);
+		glViewport(0, 0, width, height);
 
 		glClear(GL_COLOR_BUFFER_BIT);
 
